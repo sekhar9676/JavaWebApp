@@ -5,11 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Home Page</title>
-<link href="images/mithunlogo.jpg" rel="icon">
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to DevOps </h1>
+<h1 align="center">Welcome to DevOps-Implemented by sekhar </h1>
 <h1 align="center"> Welcoem to DevOps CICD automcation</h1>
 <hr>
 <br>
