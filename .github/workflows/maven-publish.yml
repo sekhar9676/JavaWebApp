@@ -28,9 +28,13 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    - uses: actions/checkout@master
+
     - name: SonarQube Scan
       uses: kitabisa/sonarqube-action@v1.1.0
       with:
         login: ${{ secrets.SONAR_HOST }}
         password: ${{ secrets.SONAR_TOKEN }}
+      
+    - name: mvn sonar
+      run: mvn clean sonar:sonar
+     
