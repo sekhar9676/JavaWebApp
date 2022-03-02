@@ -16,7 +16,7 @@ jobs:
          run: | 
            ls | grep -i pom
        - name: Run project A
-         if: steps.main.outputs == 0
+         if: ${{ steps.main.outputs }} == 0
          run: |
           echo "this is java project"
           echo  "found pom file"
