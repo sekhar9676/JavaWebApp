@@ -12,19 +12,18 @@ jobs:
          with:
            path: .
        - name: Run main repo
-         if: always()
+         
          id: main
          run: | 
            ls | grep -i pom
        - name: Run project A
-        #  if: always()
+         continue-on-error: true
          if: ${{ steps.main.outputs }} == 0
          run: |
           echo "this is java project"
           echo  "found pom file"
 
        - name: Run project B
-        #  if: always()
          if: ${{ steps.main.outputs }} == 1
          run: |
           echo "this may be .NET project"
