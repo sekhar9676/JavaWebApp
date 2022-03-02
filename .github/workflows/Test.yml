@@ -3,9 +3,9 @@ on:
  workflow_dispatch:
 
 jobs:
-   project-a-or-project-b:
+   repo-java-or-repo-.NET:
        runs-on: ubuntu-latest
-       name: project A or project B
+       name: repojava or repo.net
 
        steps:
        - name: checkout Main repo
