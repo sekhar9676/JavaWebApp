@@ -26,7 +26,7 @@ jobs:
            echo "this is java project"
            echo  "found pom file"
 
-           else ${{ steps.main.outputs }} == 1
+           else 
     
            echo "this may be .NET project"
            echo  "Not found pom file"
