@@ -15,12 +15,13 @@ jobs:
        - name: Run main repo
          id: main
          run: | 
-           ls | grep -i pom.xml
+           status=`ls | grep -i pom.xml'
+           echo "$status"
 
        - name: pick one
          if: always() 
          run: |
-           echo ${{ steps.main.outputs }}
+           echo ${{ steps.main.outputs.status }}
          
           #  if ${{ steps.main.outputs }} == 0; 
           #  then
