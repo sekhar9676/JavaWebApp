@@ -20,15 +20,16 @@ jobs:
        - name: pick one
          if: always() 
          run: |
+           echo ${{ steps.main.outputs }}
          
-           if ${{ steps.main.outputs }} == 0; 
-           then
+          #  if ${{ steps.main.outputs }} == 0; 
+          #  then
          
-           echo "this is java project"
-           echo  "found pom file"
-           else 
-           echo "this may be .NET project"
-           echo  "Not found pom file"
-           fi
+          #  echo "this is java project"
+          #  echo  "found pom file"
+          #  else 
+          #  echo "this may be .NET project"
+          #  echo  "Not found pom file"
+          #  fi
 
           
