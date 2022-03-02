@@ -17,7 +17,8 @@ jobs:
          id: main
          run: | 
            ls | grep -i pom.xml
-       - name: pick one 
+       - name: pick one
+         if: always() 
          run: |
          
            if ${{ steps.main.outputs }} == 0
