@@ -1,6 +1,8 @@
 name: pickup right one
 on:
- workflow_dispatch:
+  push:
+   branches:
+     - main
 jobs:
    project-a-or-project-b:
        runs-on: ubuntu-latest
@@ -12,19 +14,21 @@ jobs:
          with:
            path: .
        - name: Run main repo
-         
          id: main
          run: | 
-           ls | grep -i pom
-       - name: Run project A
-         continue-on-error: true
-         if: ${{ steps.main.outputs }} == 0
-         run: |
-          echo "this is java project"
-          echo  "found pom file"
+           ls | grep -i pom.xml
+       - name: pick one 
+       - run: |
+         
+           if ${{ steps.main.outputs }} == 0
+         
+           echo "this is java project"
+           echo  "found pom file"
 
-       - name: Run project B
-         if: ${{ steps.main.outputs }} == 1
-         run: |
-          echo "this may be .NET project"
-          echo  "Not found pom file"
+           else ${{ steps.main.outputs }} == 1
+    
+           echo "this may be .NET project"
+           echo  "Not found pom file"
+           fi
+
+          
