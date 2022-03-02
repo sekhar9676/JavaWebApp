@@ -1,8 +1,7 @@
 name: pickup right one
 on:
-  push:
-   branches:
-     - main
+ workflow_dispatch:
+ 
 jobs:
    project-a-or-project-b:
        runs-on: ubuntu-latest
