@@ -17,11 +17,12 @@ jobs:
          run: | 
            status=`ls | grep -i pom.xml`
            echo "$status"
+           Write-Output "::set-output name=GREET::$status
 
        - name: pick one
          if: always() 
          run: |
-           echo ${{ steps.main.outputs.status }}
+           echo ${{ steps.main.outputs.GREET }}
          
           #  if ${{ steps.main.outputs }} == 0; 
           #  then
