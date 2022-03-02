@@ -15,23 +15,22 @@ jobs:
        - name: Run main repo
          id: main
          run: | 
-           status=`ls | grep -i pom.xml`
+           status=`ls | grep -i pom`
            echo "$status"
-           echo "::set-output name=GREET::$status"
+           echo "::set-output name=app::$status"
 
        - name: pick one
          if: always() 
          run: |
-           echo ${{ steps.main.outputs.GREET }}
+           echo ${{ steps.main.outputs.app }}
          
-          #  if ${{ steps.main.outputs }} == 0; 
-          #  then
+           if [ "${{ steps.main.outputs.app }}" == 'pom' ]; then
          
-          #  echo "this is java project"
-          #  echo  "found pom file"
-          #  else 
-          #  echo "this may be .NET project"
-          #  echo  "Not found pom file"
-          #  fi
+           echo "this is java project"
+           echo  "found pom file"
+           else 
+           echo "this may be .NET project"
+           echo  "Not found pom file"
+           fi
 
           
