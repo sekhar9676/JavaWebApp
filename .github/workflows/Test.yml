@@ -17,7 +17,7 @@ jobs:
          run: | 
            status=`ls | grep -i pom.xml`
            echo "$status"
-           echo "::set-output name=GREET::status"
+           echo "::set-output name=GREET::$status"
 
        - name: pick one
          if: always() 
