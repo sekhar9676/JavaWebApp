@@ -1,7 +1,7 @@
 name: pickup right one
 on:
  workflow_dispatch:
- 
+
 jobs:
    project-a-or-project-b:
        runs-on: ubuntu-latest
@@ -16,11 +16,13 @@ jobs:
          id: main
          run: | 
            ls | grep -i pom.xml
+
        - name: pick one
          if: always() 
          run: |
          
-           if [${{ steps.main.outputs }} == 0]; then
+           if ${{ steps.main.outputs }} == 0; 
+           then
          
            echo "this is java project"
            echo  "found pom file"
