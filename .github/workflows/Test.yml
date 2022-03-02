@@ -1,0 +1,28 @@
+name: pickup right one
+on:
+ workflow_dispatch:
+jobs:
+   project-a-or-project-b:
+       runs-on: ubuntu-latest
+       name: project A or project B
+
+       steps:
+       - name: checkout Main repo
+         uses: actions/checkout@v2
+         with:
+           path: .
+       - name: Run main repo
+         id: main
+         run: | 
+           ls | grep -i pom
+       - name: Run project A
+         if: steps.main.outputs == 0
+         run: |
+          echo "this is java project"
+          echo  "found pom file"
+
+       - name: Run project B
+         if: steps.main.outputs == 1
+         run: |
+          echo "this may be .NET project"
+          echo  "Not found pom file"
