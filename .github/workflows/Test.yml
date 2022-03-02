@@ -22,7 +22,7 @@ jobs:
           echo  "found pom file"
 
        - name: Run project B
-         if: steps.main.outputs == 1
+         if: ${{ steps.main.outputs }} == 1
          run: |
           echo "this may be .NET project"
           echo  "Not found pom file"
