@@ -24,7 +24,7 @@ jobs:
          run: |
            echo ${{ steps.main.outputs.app }}
          
-           if [ "${{ steps.main.outputs.app }}" == 'pom' ]; then
+           if [ "${{ steps.main.outputs.app }}" == 'pom.xml' ]; then
          
            echo "this is java project"
            echo  "found pom file"
